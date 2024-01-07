@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    vector<int>temp;
+    for(int i=0;i<n;i++){
+        int k;
+        cin>>k;
+        temp.push_back(k);
+    }
+    int c=0;
+    for(int i=0;i<n-1;i++){
+        // cout<<temp[i]<<endl;
+        for(int j=i+1;j<n;j++){
+            if(((abs(temp[i]-temp[j]))<=min(temp[i],temp[j])) && ((temp[i]^temp[j])>c)){
+                c=temp[i]^temp[j];
+            }
+        }
+    }
+    cout<<c;
+}
